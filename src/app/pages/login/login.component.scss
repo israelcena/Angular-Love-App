@@ -1,0 +1,21 @@
+@import "../../../styles/abstracts/variables.scss";
+
+.form {
+    width: $spacing-items-left-area;
+    margin-bottom: .5em;
+    
+    label {
+        color: $secondary-color;
+        font-size: 1.3em;
+    }
+
+    &-input {
+        display: flex;
+        flex-direction: column;
+        gap: .5em;
+
+        &--email {
+            margin-bottom: 1em;
+        }
+    }
+}

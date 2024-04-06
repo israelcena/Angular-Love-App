@@ -1,1 +1,77 @@
+@import "./styles/abstracts/variables.scss";
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
 /* You can add global styles to this file, and also import other style files */
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Nunito Sans", sans-serif;
+    color: rgb(77, 77, 77);
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100,
+        "YTLC" 500;
+}
+
+input {
+    background-color: $gray-color-light;
+    padding: 10px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: $default-border-radius;
+    border-color: rgba($alternative-color, .5);
+    border-bottom: 3px solid transparent;
+    display: block;
+    transition: all .5s;
+    color: $secondary-color;
+
+    &::-webkit-input-placeholder {
+        color: darkgray;
+    }
+
+    &:invalid {
+        border-bottom: 3px solid red;
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: 0 1rem 2rem rgba($alternative-color, .1);
+        border-bottom: 3px solid $primary-color;
+        &:invalid {
+            border-bottom: 3px solid red;
+        }
+    }
+}
+
+button {
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: $default-border-radius;
+    transition: all .1s;
+
+    &:active {
+        transform: translateY(3%);
+    }
+
+    &.btn-primary {
+        background-color: $primary-color;
+        color: $gray-color-light;
+        box-shadow: 0 1rem 2rem rgba($gray-color-dark, .2);
+    }
+
+    &.btn-secondary {
+        background-color: transparent;
+        border: 1px solid $primary-color;
+        color: $gray-color-dark;
+    }
+}

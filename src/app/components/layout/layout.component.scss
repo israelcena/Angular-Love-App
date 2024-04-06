@@ -1,0 +1,77 @@
+@import "../../../styles/abstracts/variables.scss";
+@import "../../../styles/abstracts/mixins.scss";
+
+main {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    .left-content {
+        @include flexCenter;
+        flex-direction: column;
+        gap: 2em;
+
+        grid-column-start: 1;
+        grid-column-end: 1;
+
+        .logo {
+            @include flexCenter;
+            
+            h2 {
+                color: $secondary-color;
+            }
+            &-brand {
+                color: $primary-color;
+            }
+
+            img {
+                max-height: 4em;
+            }
+        }
+
+        .actions {
+            @include flexCenter;
+            flex-direction: column;
+            gap: 2em;
+            width: $spacing-items-left-area;
+
+            &--separator {
+                width: 100%;
+                text-transform: lowercase;
+                color: rgba($gray-color-dark, .4);
+                @include flexCenter;
+                gap: 1rem;
+
+                &::after{
+                    content: "";
+                    background-color: rgba($gray-color-dark, .4);
+                    height: 10%;
+                    width: 100%;
+                }
+
+                &::before{
+                    content: "";
+                    background-color: rgba($gray-color-dark, .4);
+                    height: 10%;
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .right-content {
+        @include flexCenter;
+        flex-direction: column;
+
+        grid-column-start: 2;
+        grid-column-end: 4;
+        background-color: $terciary-color;
+
+        img {
+            max-width: 20em;
+        }
+
+        h1 {
+            margin: 1.5em 0;
+        }
+    }
+}
