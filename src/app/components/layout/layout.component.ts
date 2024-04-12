@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-layout',
@@ -9,4 +9,10 @@ import { Component, Input } from '@angular/core';
 })
 export class LayoutComponent {
   @Input() title: string = '';
+  @Output("submit") onSubmit = new EventEmitter();
+
+  submit() {
+    this.onSubmit.emit();
+  }
+
 }

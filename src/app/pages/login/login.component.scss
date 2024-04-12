@@ -1,21 +1,10 @@
 @import "../../../styles/abstracts/variables.scss";
 
-.form {
+.form-container {
     width: $spacing-items-left-area;
     margin-bottom: .5em;
-    
-    label {
-        color: $secondary-color;
-        font-size: 1.3em;
-    }
-
-    &-input {
-        display: flex;
-        flex-direction: column;
-        gap: .5em;
-
-        &--email {
-            margin-bottom: 1em;
-        }
+    & > *:nth-child(-n + 1) {
+        display: block;
+        margin-bottom: 1em;
     }
 }

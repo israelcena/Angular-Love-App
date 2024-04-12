@@ -1,0 +1,11 @@
+<div class="form-input">
+    <label [for]="itemId">{{ label }}</label>
+    <input 
+        [type]="type" 
+        [id]="itemId" 
+        [placeholder]="placeholder" 
+        [autofocus]="isMain" 
+        [value]="value"
+        (input)="onInput($event)"
+        />
+</div>
